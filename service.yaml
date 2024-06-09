@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: youtube-mp3-service
+spec:
+  template:
+    spec:
+      containers:
+        - image: southamerica-east1-docker.pkg.dev/youtubemp3-425921/youtubemp3/youtubemp3:latest
+          env:
+          ports:
+            - containerPort: 4000
